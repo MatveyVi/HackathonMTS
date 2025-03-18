@@ -1,4 +1,5 @@
 const UserModel = require('../models/user-model')
+const CameraModel = require('../models/camera-model')
 const bcrypt = require('bcrypt');
 const tokenService = require('./token-service')
 const UserDto = require('../dtos/user-dto')
@@ -71,6 +72,12 @@ class UserService {
     async getAllUsers() {
         const users = await UserModel.find()
         return users
+    }
+
+    async getAllCameras(CameraName, Quantity) {
+        const cameras = await CameraModel.create({CameraName, Quantity})
+        console.log(cameras)
+        return cameras
     }
 }
 

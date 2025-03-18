@@ -67,6 +67,17 @@ class userController {
             next(e)
         }
     }
+    async getAllCameras(req, res) {
+        try {
+            const { CameraName, Quantity } = req.body
+            const cameras = await userService.getAllCameras(CameraName, Quantity)
+            return res.json({
+                message: cameras
+            })
+        } catch(e) {
+            console.log(e)
+        }
+    }
 }
 
 module.exports = new userController()
