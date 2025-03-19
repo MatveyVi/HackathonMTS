@@ -74,10 +74,9 @@ class UserService {
         return users
     }
 
-    async getAllCameras(CameraName, Quantity) {
-        const cameras = await CameraModel.create({CameraName, Quantity})
-        console.log(cameras)
-        return cameras
+    async getCameraQuantity(id) {
+        const camera = await CameraModel.findById(id)
+        return camera.Quantity
     }
 }
 

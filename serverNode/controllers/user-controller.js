@@ -67,12 +67,12 @@ class userController {
             next(e)
         }
     }
-    async getAllCameras(req, res) {
+    async getCameraById(req, res) {
         try {
-            const { CameraName, Quantity } = req.body
-            const cameras = await userService.getAllCameras(CameraName, Quantity)
-            return res.json({
-                message: cameras
+            const id = req.params.id
+            const Quantity = await userService.getCameraQuantity(id)
+            res.json({
+                Quantity
             })
         } catch(e) {
             console.log(e)
