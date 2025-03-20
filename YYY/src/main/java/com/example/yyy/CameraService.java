@@ -1,12 +1,10 @@
-package com.example.hacaton;
+package com.example.yyy;
 
 import org.bson.types.ObjectId;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
-import static org.springframework.data.mongodb.core.aggregation.MergeOperation.UniqueMergeId.id;
 
 @Service
 public class CameraService {

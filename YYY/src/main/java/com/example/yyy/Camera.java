@@ -1,4 +1,4 @@
-package com.example.hacaton;
+package com.example.yyy;
 
 import lombok.*;
 import org.bson.types.ObjectId;
@@ -14,9 +14,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document(collection = "cameras") // Имя коллекции в MongoDB
 public class Camera {
     @Id
-    private ObjectId id;  // Уникальный идентификатор
+    private Long    id;  // Уникальный идентификатор
     private String CameraName;
-    @Field("Quantity")
-    private Integer Quantity;
+    @Field("quantity")
+    private Integer quantity;
 
 }
